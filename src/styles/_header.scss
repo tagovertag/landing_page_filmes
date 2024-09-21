@@ -1,0 +1,79 @@
+
+
+@use 'color';
+
+.back-ground {
+    width: 100%;
+    height: 100px;
+    background-color: color.$corFundoHeader;
+
+    @media (max-width: 768px) {
+        max-width: 100%;
+        height: 300px;
+    }
+    
+
+    &__Header {
+        position: absolute;
+        right: 120px;
+        text-align: center;
+        margin-top: 35px;
+
+        @media (max-width: 768px){
+            margin: 0;
+            position: relative;
+            right: 0;
+            align-items: center;
+            justify-content: center;
+            padding-top: 40px;
+        }
+        
+            
+        &__menu {
+            
+            ul{       
+                display: flex;   
+                border-radius: 10px; 
+
+                @media (max-width: 768px) {
+                    display: block;     
+                    
+                }
+
+
+                li {
+                    
+                    @media (max-width: 768px) {
+                        padding-bottom: 30px;
+                        
+        
+                        a:hover{
+                            background-color: color.$corLink;
+                            color: color.$corred;   
+                        }
+                    }
+                    
+                    a{
+                        padding: 15px 50px 15px 50px;
+                        font-size: 30px;       
+                        color: color.$corLink;
+                        text-decoration: none;
+                        font-weight: bold;
+                        border-radius: 10px;
+
+                        @media (max-width: 768px){
+                            font-size: 20px;
+
+                        }
+                    }
+                    
+                    a:hover{
+                        
+                        background-color: color.$corLink;
+                        color: color.$corred;
+                    }
+                }
+            }    
+        }
+    }
+}

@@ -1,0 +1,118 @@
+
+
+
+
+@use 'color';
+
+.showcase {
+    max-width: 100vw;
+    height: auto;
+    padding: 90px 0;
+    background-color: color.$corshowcase;
+
+    // Ajuste para telas médias e pequenas
+    @media (max-width: 1000px) {
+        height: auto;
+        padding: 60px 0;
+    }
+
+    @media (max-width: 768px) {
+        padding: 40px 0;
+    }
+
+    &__search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 10px;
+        border-radius: 12px;
+        background-color: color.$corWhite;
+        color: color.$cordivision;
+
+        i {
+            font-size: 1.8rem;
+            color: color.$cordivision;
+            margin-right: 10px;
+        }
+
+        input {
+            flex: 1;
+            font-size: 1.2rem;
+            padding: 10px;
+            border: 1px solid color.$cordivision;
+            border-radius: 8px;
+            outline: none;
+
+            &::placeholder {
+                color: color.$cordivision;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 1rem;
+                padding: 8px;
+            }
+        }
+    }
+
+    &__bloco {
+        max-width: 90vw;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); // Cria três colunas iguais
+        gap: 20px; // Espaço entre os itens
+        margin: 40px auto;
+        padding: 50px;
+        
+
+        @media (max-width: 1000px) {
+            grid-template-columns: repeat(2, 1fr); // Duas colunas em telas menores
+        }
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr; // Uma coluna em telas ainda menores
+            padding: 30px;
+        }
+
+        &__img {
+            width: 100%;
+            text-align: center;
+
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                object-fit: cover;
+            }
+
+            button {
+                width: 100%;
+                height: 50px;
+                font-size: 1rem;
+                margin-top: 10px;
+                cursor: pointer;
+                border: none;
+                border-radius: 8px;
+                font-size: 35px;
+                background-color: color.$corWhite;
+                color: color.$corFundoHeader;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                strong {
+                    font-size: 35px;
+                    margin-left: 10px;
+                }
+
+                &:hover {
+                    background-color: color.$corred;
+                    color: color.$corWhite;
+                }
+            }
+        }
+    }
+}

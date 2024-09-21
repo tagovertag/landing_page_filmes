@@ -1,0 +1,118 @@
+
+
+
+@use 'color';
+
+.img_fundo {
+    background-image: url(../images/img-quadriculada.jpg);
+    background-size: cover;  // Ajusta a imagem para cobrir o fundo
+    background-position: center; // Centraliza a imagem
+
+    
+}
+
+.sports {
+    width: 100%;
+    height: auto; // Ajusta a altura automaticamente
+    min-height: 1000px; // Garante uma altura mínima
+    background-color: rgba(0, 0, 0, 0.965);
+    padding: 20px; // Adiciona um padding geral para espaçamento
+
+    @media (max-width: 768px) {
+        height: auto; // Ajusta a altura para dispositivos móveis
+        padding: 10px; // Reduz o padding em dispositivos móveis
+    }
+
+    @media (max-width: 1200px) {
+        min-height: 680px;
+        
+    }
+
+    .title_sports {
+        text-align: center; // Centraliza o texto
+        padding-top: 50px; // Ajusta o padding superior
+        padding-bottom: 90px; // Ajusta o padding inferior
+
+        h2 {
+            font-size: 2.5rem; // Tamanho da fonte ajustado para responsividade
+            color: color.$corWhite;
+            margin: 0; // Remove margens adicionais
+
+            @media (max-width: 768px) {
+                font-size: 1.5rem; // Tamanho da fonte reduzido para dispositivos móveis
+                padding-top: 20px; // Ajusta o padding superior
+                padding-bottom: 20px; // Ajusta o padding inferior
+            }
+        }
+    }
+
+    .carousel {
+        align-items: center;
+        justify-content: center;
+        padding-top: 40px; // Ajusta o padding superior
+        display: flex;
+        /*flex-direction: column;  Alinha o conteúdo verticalmente*/
+        box-shadow: 0 0 10px #00b3ff,
+                    0 0 20px #00b3ff, 
+                    0 0 40px #00b3ff, 
+                    0 0 80px #00b3ff, 
+                    0 0 120px #00b3ff;
+
+        @media (max-width: 768px) {
+            padding-top: 20px; // Reduz o padding superior
+        }
+
+        img { 
+            width: 100%; // Ajusta a largura da imagem para ocupar o espaço disponível
+            
+            height: auto; // Ajusta a altura automaticamente
+            padding: 10px; // Ajusta o padding
+
+            @media (max-width: 768px) {
+                max-width: 100%; // Ajusta a largura máxima em dispositivos móveis
+                height: auto; // Mantém a altura automática
+                padding: 5px; // Reduz o padding
+                
+            
+            }
+        }
+
+        .img {
+            padding: 0 10px; // Ajusta o padding lateral
+            padding-bottom: 20px; // Ajusta o padding inferior
+
+            strong a {
+                display: block;
+                max-width: 100%; // Ajusta a largura máxima para ocupar o espaço disponível
+                margin: 10px auto; // Centraliza o link e ajusta as margens
+                font-size: 1.5rem; // Tamanho da fonte ajustado para responsividade
+                padding-bottom: 10px;
+                cursor: pointer;  
+                text-decoration: none;
+                letter-spacing: 0.1em;
+                color: white;
+
+                @media (max-width: 768px) {
+                    font-size: 1rem; // Reduz o tamanho da fonte para dispositivos móveis
+                
+                    
+                }
+            }
+        }
+    }
+
+    [data-anime] {
+        opacity: 0;
+        transition: opacity .3s, transform .3s;
+    }
+
+    [data-anime="left"] {
+        transform: translate3d(-50px, 0, 0);
+    }
+
+    [data-anime].animate {
+        opacity: 1;
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+
